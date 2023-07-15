@@ -30,7 +30,7 @@ class list1_builder extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar( title: Text("List generate",)),
+        appBar: AppBar( title: Text("List Builder",)),
     body:  ListView.builder(
         itemCount: names.length,
         itemBuilder: (context, index) {

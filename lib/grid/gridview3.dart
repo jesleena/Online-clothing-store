@@ -21,7 +21,7 @@ class GridView3 extends StatelessWidget {
                   color: Colors.black,),
                 child: Column(
                   children: [
-                    Image.asset("assets/icon1.png",height: 80,),
+                    Image.asset("assets/icon1.png",height: 50,),
                     const Text(
                       "hi",
                       style: TextStyle(color: Colors.yellow),)

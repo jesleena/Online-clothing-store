@@ -21,7 +21,7 @@ class FirstPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            fit: BoxFit.fill,image:AssetImage("assets/bg1.jpeg"),),),
+            fit: BoxFit.fill,image:AssetImage("assets/bg1.jpg"),),),
 
         child: Center(
           child: Column(
