@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'formvalidate/loginPage.dart';
 import 'formvalidate/splash_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -14,12 +13,12 @@ class OnBoardingEx extends StatelessWidget {
   Widget build(BuildContext context) {
     PageDecoration pageDecoration = const PageDecoration(
         titleTextStyle: TextStyle(
-          fontFamily:'Lato',
+          fontFamily:'Amaranth',
             color: Colors.black,
             fontStyle: FontStyle.italic,
             fontSize: 30,
             fontWeight: FontWeight.bold),
-        bodyTextStyle: TextStyle(fontSize: 18, color: Colors.black),
+        bodyTextStyle: TextStyle(fontSize: 18, color: Colors.black,fontStyle: FontStyle.italic),
         imagePadding: EdgeInsets.all(20),
         boxDecoration: BoxDecoration(
             gradient: LinearGradient(colors: [
@@ -39,7 +38,7 @@ class OnBoardingEx extends StatelessWidget {
           ),
           title: "First Page",
           body:
-          "With Microsoft 365 for families, you can create, organize, and collaborate, all in one place",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
         ),
         PageViewModel(
             decoration: const PageDecoration(
@@ -60,7 +59,7 @@ class OnBoardingEx extends StatelessWidget {
             ),
             title: "SecondPage",
             body:
-            "With Microsoft 365 for families, you can create, organize, and collaborate, all in one place"),
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"),
         PageViewModel(
             decoration: pageDecoration,
             image: Align(
@@ -68,7 +67,7 @@ class OnBoardingEx extends StatelessWidget {
               child: Image.asset("assets/icon4.png"),
             ),
             title: "Third Page",
-            body: "With Microsoft 365 for families, you can create, organize, and collaborate, all in one place")
+            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",)
       ],
       onDone: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage())),
       onSkip: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SplashPage())),

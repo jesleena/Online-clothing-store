@@ -28,6 +28,8 @@ dev_dependencies:
   carousel_slider: ^4.2.1
   font_awesome_flutter:
   flutter_custom_clippers: ^2.1.0
+  google_maps_flutter: ^2.4.0
+  shared_preferences: ^2.2.0
 
 
 
@@ -41,3 +43,7 @@ flutter:
 
   assets:
     - assets/
+  fonts:
+    - family: Amaranth
+      fonts:
+        - asset: assets/fonts/Amaranth-BoldItalic.ttf

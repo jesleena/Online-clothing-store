@@ -2,7 +2,7 @@ List<Map<String,dynamic>> customers = [
   {
     "id"  : 1,
     "name":"jesleena iqbal",
-    "price":300,
+    "age":34,
     "rating":4,
     "image":"assets/icon1.png",
     "description": "jesleena iqbal"
@@ -10,7 +10,7 @@ List<Map<String,dynamic>> customers = [
   {
     "id"  : 2,
     "name":"shihas mohammed",
-    "price":400,
+    "age":36,
     "rating":4.8,
     "image":"assets/icon6.png",
     "description": "shihas mohammed"
@@ -19,7 +19,7 @@ List<Map<String,dynamic>> customers = [
   {
     "id"  : 3,
     "name":"azam ahmed",
-    "price":1300,
+    "age":9,
     "rating":4.2,
     "image":"assets/icon4.png",
     "description": "azam ahmed"
