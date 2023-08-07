@@ -41,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
 
         decoration: const BoxDecoration(
           image: DecorationImage(
-            fit: BoxFit.fill,image:AssetImage("assets/bg1.jpg"),),),
+            fit: BoxFit.fill,image:AssetImage("assets/bg1.jpeg"),),),
 
         child: Center(
           child: Column(

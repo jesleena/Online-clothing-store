@@ -71,8 +71,8 @@ class OnBoardingEx extends StatelessWidget {
       ],
       onDone: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage())),
       onSkip: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => SplashPage())),
-      showSkipButton: true,
-      skip: const Text("Skip"),
+     showSkipButton: true,
+     skip: const Text("Skip"),
       next: const Text("Next"),
       done: const Text("Continue"),
       dotsDecorator: const DotsDecorator(
