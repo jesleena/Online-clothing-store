@@ -119,7 +119,7 @@ class _UserFormState extends State<UserForm> {
                 ),
 
                 // elevated button
-                customButton("Continue",()=>sendUserDataToDB()),
+                customButton("Submit",()=>sendUserDataToDB()),
               ],
             ),
           ),

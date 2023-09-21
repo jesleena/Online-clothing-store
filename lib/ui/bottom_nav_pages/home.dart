@@ -89,7 +89,8 @@ class _HomeState extends State<Home> {
                 ),
                 AspectRatio(
                   aspectRatio: 3.5,
-                  child: CarouselSlider(
+                  child:
+                  CarouselSlider(
                       items: _carouselImages
                           .map((item) => Padding(
                         padding: const EdgeInsets.only(left: 3, right: 3),
@@ -118,7 +119,7 @@ class _HomeState extends State<Home> {
                 DotsIndicator(
                   dotsCount:
                   _carouselImages.length == 0 ? 1 : _carouselImages.length,
-                  position: _dotPosition.toDouble(),
+                  position: _dotPosition.toInt(),
                   decorator: DotsDecorator(
                     activeColor: AppColors.deep_orange,
                     color: AppColors.deep_orange.withOpacity(0.5),

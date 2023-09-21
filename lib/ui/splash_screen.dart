@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_classwork/const/AppColors.dart';
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "E-Commerce",
+                "Glam Up",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
