@@ -135,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: TextField(
                                 controller: _emailController,
                                 decoration: InputDecoration(
-                                  hintText: "email id",
+                                  hintText: "enter a valid email id",
                                   hintStyle: TextStyle(
                                     fontSize: 14.sp,
                                     color: Color(0xFF414041),

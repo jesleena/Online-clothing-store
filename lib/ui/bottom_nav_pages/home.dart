@@ -72,11 +72,11 @@ class _HomeState extends State<Home> {
                     decoration: InputDecoration(
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(0)),
-                          borderSide: BorderSide(color: Colors.blue)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(0)),
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderSide: BorderSide(color: Colors.purple)),
+                     enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                         borderSide: BorderSide(color: Colors.purple)),
                       hintText: "Search products here",
                       hintStyle: TextStyle(fontSize: 15.sp),
                     ),
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                       ))
                           .toList(),
                       options: CarouselOptions(
-                          autoPlay: false,
+                          autoPlay: true,
                           enlargeCenterPage: true,
                           viewportFraction: 0.8,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
@@ -133,7 +133,7 @@ class _HomeState extends State<Home> {
                 ),
                 Expanded(
                   child: GridView.builder(
-                      scrollDirection: Axis.horizontal,
+                      scrollDirection: Axis.vertical,
                       itemCount: _products.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2, childAspectRatio: 1),
@@ -145,12 +145,16 @@ class _HomeState extends State<Home> {
                             child: Column(
                               children: [
                                 AspectRatio(
-                                    aspectRatio: 2,
-                                    child: Container(
-                                        color: Colors.yellow,
-                                        child: Image.network(
-                                          _products[index]["product-img"][0],
-                                        ))),
+                                    aspectRatio: 1.3,
+                                    child:
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
+                                        image: DecorationImage(
+                                          image: NetworkImage(_products[index]["product-img"][0]),
+                                          fit: BoxFit.cover,
+                                        ),),),
+                                          ),
                                 Text("${_products[index]["product-name"]}"),
                                 Text(
                                     "${_products[index]["product-price"].toString()}"),

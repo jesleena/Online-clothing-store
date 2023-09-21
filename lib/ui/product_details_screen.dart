@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_classwork/const/AppColors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
 class ProductDetails extends StatefulWidget {
   var _product;
   ProductDetails(this._product);
@@ -17,17 +17,13 @@ class _ProductDetailsState extends State<ProductDetails> {
   Future addToCart() async {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     var currentUser = _auth.currentUser;
-    CollectionReference _collectionRef =
-    FirebaseFirestore.instance.collection("users-cart-items");
+    CollectionReference _collectionRef =FirebaseFirestore.instance.collection("users-cart-items");
     return _collectionRef
-        .doc(currentUser!.email)
-        .collection("items")
-        .doc()
-        .set({
+        .doc(currentUser!.email).collection("items").doc().set({
       "name": widget._product["product-name"],
       "price": widget._product["product-price"],
       "images": widget._product["product-img"],
-    }).then((value) => print("Added to cart"));
+    }).then((value) => Fluttertoast.showToast(msg: "Added to cart"));
   }
 
   Future addToFavourite() async {
@@ -43,7 +39,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       "name": widget._product["product-name"],
       "price": widget._product["product-price"],
       "images": widget._product["product-img"],
-    }).then((value) => print("Added to favourite"));
+    }).then((value) => Fluttertoast.showToast(msg: "Added to favourite"));
   }
 
   @override
@@ -74,17 +70,14 @@ class _ProductDetailsState extends State<ProductDetails> {
               }
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
-                child: CircleAvatar(
-                  backgroundColor: Colors.red,
-                  child: IconButton(
-                    onPressed: () => snapshot.data.docs.length==0?addToFavourite():print("Already Added"),
-                    icon: snapshot.data.docs.length==0? Icon(
-                      Icons.favorite_outline,
-                      color: Colors.white,
-                    ):Icon(
-                      Icons.favorite,
-                      color: Colors.white,
-                    ),
+                child: IconButton(
+                  onPressed: () => snapshot.data.docs.length==0?addToFavourite():Fluttertoast.showToast(msg: "Already Added"),
+                  icon: snapshot.data.docs.length==0? Icon(
+                    Icons.favorite_outline,
+                    color: Colors.red,size: 40,
+                  ):Icon(
+                    Icons.favorite,
+                    color: Colors.red,size: 40,
                   ),
                 ),
               );
@@ -100,7 +93,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AspectRatio(
-                  aspectRatio: 3.5,
+                  aspectRatio: 1,
                   child: CarouselSlider(
                       items: widget._product['product-img']
                           .map<Widget>((item) => Padding(
@@ -109,14 +102,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: NetworkImage(item),
-                                  fit: BoxFit.fitWidth)),
+                                  fit: BoxFit.fitHeight)),
                         ),
                       ))
                           .toList(),
                       options: CarouselOptions(
                           autoPlay: false,
                           enlargeCenterPage: true,
-                          viewportFraction: 0.8,
+                          viewportFraction: 1,
                           enlargeStrategy: CenterPageEnlargeStrategy.height,
                           onPageChanged: (val, carouselPageChangedReason) {
                             setState(() {});
@@ -146,7 +139,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       style: TextStyle(color: Colors.white, fontSize: 18.sp),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: AppColors.deep_orange,
+                      backgroundColor: AppColors.deep_orange,
                       elevation: 3,
                     ),
                   ),

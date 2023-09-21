@@ -41,6 +41,7 @@ class _UserFormState extends State<UserForm> {
 
     CollectionReference _collectionRef = FirebaseFirestore.instance.collection("users-form-data");
     return _collectionRef.doc(currentUser!.email).set({
+      "img":'https://cdn-icons-png.flaticon.com/512/2815/2815428.png',
       "name":_nameController.text,
       "phone":_phoneController.text,
       "dob":_dobController.text,
