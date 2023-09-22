@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_classwork/const/AppColors.dart';
+import 'package:flutter_classwork/const/AppConstants.dart';
 import 'package:flutter_classwork/ui/bottom_nav_pages/cart.dart';
 import 'package:flutter_classwork/ui/bottom_nav_pages/favourite.dart';
 import 'package:flutter_classwork/ui/bottom_nav_pages/home.dart';
@@ -27,14 +27,14 @@ class _BottomNavControllerState extends State<BottomNavController> {
         elevation: 0,
         title: Text(
           "Glam-Up",
-          style: TextStyle(color: Colors.black),
+          style: appNameStyle
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 5,
-        selectedItemColor: AppColors.deep_orange,
+        selectedItemColor: myappColor,
         backgroundColor: Colors.white,
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_classwork/const/AppColors.dart';
+import 'package:flutter_classwork/const/AppConstants.dart';
 import 'package:flutter_classwork/ui/login_screen.dart';
 import 'package:flutter_classwork/ui/user_form.dart';
 
@@ -49,7 +49,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.deep_orange,
+      backgroundColor: myappColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -100,7 +100,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         Text(
                           "Welcome Buddy!",
                           style: TextStyle(
-                              fontSize: 22.sp, color: AppColors.deep_orange),
+                              fontSize: 22.sp, color:myappColor),
                         ),
                         Text(
                           "Glad to see you back my buddy.",
@@ -118,7 +118,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               height: 48.h,
                               width: 41.w,
                               decoration: BoxDecoration(
-                                  color: AppColors.deep_orange,
+                                  color: myappColor,
                                   borderRadius: BorderRadius.circular(12.r)),
                               child: Center(
                                 child: Icon(
@@ -143,7 +143,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   labelText: 'EMAIL',
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
-                                    color: AppColors.deep_orange,
+                                    color: myappColor,
                                   ),
                                 ),
                               ),
@@ -159,7 +159,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               height: 48.h,
                               width: 41.w,
                               decoration: BoxDecoration(
-                                  color: AppColors.deep_orange,
+                                  color: myappColor,
                                   borderRadius: BorderRadius.circular(12.r)),
                               child: Center(
                                 child: Icon(
@@ -185,7 +185,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   labelText: 'PASSWORD',
                                   labelStyle: TextStyle(
                                     fontSize: 15.sp,
-                                    color: AppColors.deep_orange,
+                                    color: myappColor,
                                   ),
                                   suffixIcon: _obscureText == true
                                       ? IconButton(
@@ -231,7 +231,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   color: Colors.white, fontSize: 18.sp),
                             ),
                             style: ElevatedButton.styleFrom(
-                              primary: AppColors.deep_orange,
+                              backgroundColor:myappColor,
                               elevation: 3,
                             ),
                           ),
@@ -255,7 +255,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 style: TextStyle(
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: AppColors.deep_orange,
+                                  color:myappColor,
                                 ),
                               ),
                               onTap: () {

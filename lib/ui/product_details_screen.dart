@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_classwork/const/AppColors.dart';
+import 'package:flutter_classwork/const/AppConstants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 class ProductDetails extends StatefulWidget {
@@ -51,7 +51,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
-            backgroundColor: AppColors.deep_orange,
+            backgroundColor: myappColor,
             child: IconButton(
                 onPressed: () => Navigator.pop(context),
                 icon: Icon(
@@ -117,16 +117,15 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
                 Text(
                   widget._product['product-name'],
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                  style: ItemNameStyle,
                 ),
-                Text(widget._product['product-description']),
+                Text(widget._product['product-description'],style: ItemDescStyle,),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
-                  "\$ ${widget._product['product-price'].toString()}",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 30, color: Colors.red),
+                  "\I\N\R ${widget._product['product-price'].toString()}",
+                  style: ItemPriceStyle,
                 ),
                 Divider(),
                 SizedBox(
@@ -136,10 +135,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                     onPressed: () => addToCart(),
                     child: Text(
                       "Add to cart",
-                      style: TextStyle(color: Colors.white, fontSize: 18.sp),
+                      style: myButtonStyle,
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.deep_orange,
+                      backgroundColor: myappColor,
                       elevation: 3,
                     ),
                   ),

@@ -2,19 +2,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_classwork/const/AppConstants.dart';
-import 'package:flutter_classwork/ui/adminLogin.dart';
 import 'package:flutter_classwork/ui/bottom_nav_controller.dart';
 import 'package:flutter_classwork/ui/registration_screen.dart';
 import 'package:flutter_classwork/widgets/customButton.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'adminpage.dart';
-class LoginScreen extends StatefulWidget {
+class AdminLoginScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _AdminLoginScreenState createState() => _AdminLoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AdminLoginScreenState extends State<AdminLoginScreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   bool _obscureText = true;
@@ -28,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
       var authCredential = userCredential.user;
       print(authCredential!.uid);
       if(authCredential.uid.isNotEmpty){
-        Navigator.push(context, CupertinoPageRoute(builder: (_)=>BottomNavController()));
+        Navigator.push(context, CupertinoPageRoute(builder: (_)=>adminPage()));
       }
       else{
         Fluttertoast.showToast(msg: "Something is wrong");
@@ -71,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Text(
-                      "Sign In",
+                      "Admin Sign In",
                       style:  ItemNameStyle,
                     ),
                   ],
@@ -98,16 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: 20.h,
                         ),
-                        Text(
-                          "Welcome Back",
-                          style: ItemNameStyle,),
-                        Text(
-                          "Glad to see you back my buddy.",
-                          style: ItemDescStyle,
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
+
+
+
                         Row(
                           children: [
                             Container(
@@ -205,44 +197,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         customButton("Sign In", (){
                           signIn();
                         },),
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        Wrap(
-                          children: [
-                            Text(
-                              "Don't have an account?",
-                              style: textStyle2
-                            ),
-                            GestureDetector(
-                              child: Text(
-                                " Sign Up",
-                                style: textStyle1
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) =>
-                                            RegistrationScreen()));
-                              },
-                            )
-                          ],
-                        ),
 
 
-                        SizedBox(
-                          height: 20.h,
-                        ),
-                        TextButton(
-                          child:Text("Admin"),
-                         onPressed:() {
-                           Navigator.push(
-                               context,
-                               CupertinoPageRoute(
-                                   builder: (context) =>
-                                       AdminLoginScreen()));
-                         } ),
 
                       ],
                     ),

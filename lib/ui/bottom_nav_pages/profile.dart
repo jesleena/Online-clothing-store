@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_classwork/const/AppConstants.dart';
 class Profile extends StatefulWidget {
   @override
   _ProfileState createState() => _ProfileState();
@@ -19,37 +20,37 @@ class _ProfileState extends State<Profile> {
 
         CircleAvatar(backgroundImage: NetworkImage(data["img"]),radius: 50,),
         SizedBox(height: 30,),
-        TextFormField(
-          decoration: InputDecoration(  focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(color: Colors.purple)),
+        TextFormField(style: ItemNameStyle,
+          decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   borderSide: BorderSide(color: Colors.purple)),
-             prefixIcon: Padding(padding: EdgeInsets.all(15), child:Text("Name: "))),
-          controller: _nameController = TextEditingController(text: data['name']),
+             prefixIcon: Padding(padding: EdgeInsets.all(15), child:Text("Name: ",style: ItemNameStyle,))),
+          controller: _nameController = TextEditingController(text: data['name'],),
         ),
         SizedBox(height: 10,),
-        TextFormField(
-          decoration: InputDecoration(  focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(color: Colors.purple)),
+        TextFormField(style: ItemNameStyle,
+          decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: Colors.purple)),prefixIcon:Padding(padding: EdgeInsets.all(15), child:Text("Phone: "))),
+                  borderSide: BorderSide(color: Colors.purple)),
+              prefixIcon:Padding(padding: EdgeInsets.all(15), child:Text("Phone: ",style: ItemNameStyle,))),
           controller: _phoneController = TextEditingController(text: data['phone']),
         ),
         SizedBox(height: 10,),
         TextFormField(
-          decoration: InputDecoration(  focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              borderSide: BorderSide(color: Colors.purple)),
+          style: ItemNameStyle,
+           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: Colors.purple)),prefixIcon:Padding(padding: EdgeInsets.all(15), child: Text("Age: "))),
-          controller: _ageController = TextEditingController(text: data['age']),
+                  borderSide: BorderSide(color: Colors.purple)),
+             prefixIcon:Padding(padding: EdgeInsets.all(15), child: Text("Age: ",style: ItemNameStyle,))),
+             controller: _ageController = TextEditingController(text: data['age']),
         ),
-        ElevatedButton(onPressed: ()=>updateData(), child: Text("Update"))
+        ElevatedButton(style: ElevatedButton.styleFrom(
+
+          elevation: 3,
+        ),onPressed: ()=>updateData(), child: Text("Update",style: myButtonStyle,))
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_classwork/const/AppConstants.dart';
+import 'product_details_screen.dart';
 class SearchScreen extends StatefulWidget {
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -8,6 +9,33 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   var inputText = "";
+  /*List _products = [];
+ var _firestoreInstance = FirebaseFirestore.instance;
+
+  fetchProducts() async {
+    QuerySnapshot qn = await _firestoreInstance.collection("products").get();
+    setState(() {
+      for (int i = 0; i < qn.docs.length; i++) {
+        _products.add({
+          "product-name": qn.docs[i]["product-name"],
+          "product-description": qn.docs[i]["product-description"],
+          "product-price": qn.docs[i]["product-price"],
+          "product-img": qn.docs[i]["product-img"],
+        });
+      }
+    });
+
+    return qn.docs;
+  }
+
+  @override
+  void initState() {
+
+    fetchProducts();
+    super.initState();
+  }
+  */
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +52,19 @@ class _SearchScreenState extends State<SearchScreen> {
                   });
                 },
               ),
+
+
+
+
               Expanded(
                 child: Container(
                   child: StreamBuilder(
-                      stream: FirebaseFirestore.instance
+                      stream:
+                      FirebaseFirestore.instance
                           .collection("products")
                           .where("product-name",
-                          isGreaterThanOrEqualTo: inputText)
+                              isGreaterThanOrEqualTo: inputText)
+                          .where("product-name", isLessThan: inputText +'z')
                           .snapshots(),
                       builder: (BuildContext context,
                           AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -52,11 +86,14 @@ class _SearchScreenState extends State<SearchScreen> {
                               .map((DocumentSnapshot document) {
                             Map<String, dynamic> data =
                             document.data() as Map<String, dynamic>;
-                            return Card(
-                              elevation: 5,
-                              child: ListTile(
-                                title: Text(data['product-name']),
-                                leading: Image.network(data['product-img'][0]),
+                            return GestureDetector(
+                             // onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>ProductDetails(_products[]))),
+                              child: Card(
+                                elevation: 5,
+                                child: ListTile(
+                                  title: Text(data['product-name'],style: ItemNameStyle,),
+                                  trailing: Image.network(data['product-img'][0]),
+                                ),
                               ),
                             );
                           }).toList(),

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_classwork/const/AppColors.dart';
+import 'package:flutter_classwork/const/AppConstants.dart';
 import 'package:flutter_classwork/ui/bottom_nav_controller.dart';
 import 'package:flutter_classwork/widgets/customButton.dart';
 import 'package:flutter_classwork/widgets/myTextField.dart';
@@ -41,7 +41,7 @@ class _UserFormState extends State<UserForm> {
 
     CollectionReference _collectionRef = FirebaseFirestore.instance.collection("users-form-data");
     return _collectionRef.doc(currentUser!.email).set({
-      "img":'https://cdn-icons-png.flaticon.com/512/2815/2815428.png',
+      "img":'https://cdn2.iconfinder.com/data/icons/hair-doodles-colored/1150/hair-face-girl-woman-head-beauty-purple-64.png',
       "name":_nameController.text,
       "phone":_phoneController.text,
       "dob":_dobController.text,
@@ -66,20 +66,17 @@ class _UserFormState extends State<UserForm> {
                 ),
                 Text(
                   "Submit the form to continue.",
-                  style:
-                  TextStyle(fontSize: 22.sp, color: AppColors.deep_orange),
+                  style:ItemNameStyle
+
                 ),
                 Text(
                   "We will not share your information with anyone.",
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    color: Color(0xFFBBBBBB),
-                  ),
+                  style: ItemSearchStyle
                 ),
                 SizedBox(
                   height: 15.h,
                 ),
-                myTextField("enter your name",TextInputType.text,_nameController),
+                myTextField("enter your name",TextInputType.text,_nameController, ),
                 myTextField("enter your phone number",TextInputType.number,_phoneController),
                 TextField(
                   controller: _dobController,

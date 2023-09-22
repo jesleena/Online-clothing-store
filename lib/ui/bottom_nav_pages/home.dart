@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_classwork/const/AppColors.dart';
+import 'package:flutter_classwork/const/AppConstants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../product_details_screen.dart';
 import '../search_screen.dart';
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                          borderSide: BorderSide(color: Colors.purple)),
                       hintText: "Search products here",
-                      hintStyle: TextStyle(fontSize: 15.sp),
+                      hintStyle: ItemSearchStyle,
                     ),
                     onTap: () => Navigator.push(context,
                         CupertinoPageRoute(builder: (_) => SearchScreen())),
@@ -121,8 +121,8 @@ class _HomeState extends State<Home> {
                   _carouselImages.length == 0 ? 1 : _carouselImages.length,
                   position: _dotPosition.toInt(),
                   decorator: DotsDecorator(
-                    activeColor: AppColors.deep_orange,
-                    color: AppColors.deep_orange.withOpacity(0.5),
+                    activeColor: myappColor,
+                    color: myappColor.withOpacity(0.5),
                     spacing: EdgeInsets.all(2),
                     activeSize: Size(8, 8),
                     size: Size(6, 6),
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
                             child: Column(
                               children: [
                                 AspectRatio(
-                                    aspectRatio: 1.3,
+                                    aspectRatio: 1.4,
                                     child:
                                     Container(
                                       decoration: BoxDecoration(
@@ -155,9 +155,9 @@ class _HomeState extends State<Home> {
                                           fit: BoxFit.cover,
                                         ),),),
                                           ),
-                                Text("${_products[index]["product-name"]}"),
+                                Text("${_products[index]["product-name"]}",style:ItemNameStyle ,),
                                 Text(
-                                    "${_products[index]["product-price"].toString()}"),
+                                    "${_products[index]["product-price"].toString()}",style:ItemPriceStyle ),
                               ],
                             ),
                           ),
