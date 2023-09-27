@@ -43,7 +43,7 @@ class _CartState extends State<Cart> {
   }
 
   calculatingTotalPrice() async {
-    num totalPrice = 0;
+    num totalPrice=0;
     final firestoreInstance = FirebaseFirestore.instance;
     QuerySnapshot qn = await firestoreInstance
         .collection("users-cart-items")
@@ -59,7 +59,7 @@ class _CartState extends State<Cart> {
 
     setState(() {
 
-    });`
+    });
   }
 
   fetchData(String collectionName) {
@@ -93,7 +93,7 @@ class _CartState extends State<Cart> {
                       child: Column(
                         children: [
                           Container(
-                            height:200,
+                            height:300,
                             width: 200,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),

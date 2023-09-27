@@ -29,8 +29,7 @@ class _adminPageState extends State<adminPage> {
     var  currentUser = _auth.currentUser;
 
     CollectionReference _collectionRef = FirebaseFirestore.instance.collection("products");
-    return _collectionRef.doc(currentUser!.email).set({
-
+    return _collectionRef.doc().set({
       "product-name":_productnameController.text,
       "product-description":_productdescController.text,
       "product-price":_productpriceController.text,

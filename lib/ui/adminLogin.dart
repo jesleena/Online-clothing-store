@@ -126,7 +126,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                                   hintText: "enter a valid email id",
                                   hintStyle: textHintStyle,
                                   labelText: 'EMAIL',
-                                  labelStyle: ItemSearchStyle,
+                                  labelStyle: textStyle3,
                                 ),
                               ),
                             ),
@@ -162,7 +162,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                                   hintText: "password must be 6 character",
                                   hintStyle: textHintStyle,
                                   labelText: 'PASSWORD',
-                                  labelStyle:  ItemSearchStyle,
+                                  labelStyle:  textStyle3,
                                   suffixIcon: _obscureText == true
                                       ? IconButton(
                                       onPressed: () {

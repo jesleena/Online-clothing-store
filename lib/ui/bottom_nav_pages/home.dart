@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                          borderSide: BorderSide(color: Colors.purple)),
                       hintText: "Search products here",
-                      hintStyle: ItemSearchStyle,
+                      hintStyle:textStyle3,
                     ),
                     onTap: () => Navigator.push(context,
                         CupertinoPageRoute(builder: (_) => SearchScreen())),

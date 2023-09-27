@@ -5,6 +5,6 @@ Widget myTextField(String hintText,keyBoardType,controller){
     keyboardType: keyBoardType,
     controller: controller,
     decoration: InputDecoration(hintText: hintText),
-    style:  ItemSearchStyle ,
+    style:  textStyle3 ,
   );
 }

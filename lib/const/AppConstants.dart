@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const Color myappColor = Color(0xFFB778AA);
 
 const appNameStyle =
 TextStyle(fontStyle: FontStyle.italic,fontFamily:'Amaranth', fontSize: 35,color: Colors.purple);
 
-
 const ItemNameStyle =
 TextStyle(fontWeight: FontWeight.w500,fontFamily:'Amaranth', fontSize: 20,color: Colors.black);
+
+
+const HeadingStyle =
+TextStyle(fontWeight: FontWeight.w500,fontFamily:'Amaranth', fontSize: 25,color: Colors.white);
 
 const ItemDescStyle =
 TextStyle(fontWeight: FontWeight.w100,fontFamily:'Amaranth', fontSize: 18,color: Colors.black45);
@@ -17,8 +20,8 @@ TextStyle(fontWeight: FontWeight.w100,fontFamily:'Amaranth', fontSize: 18,color:
 const ItemPriceStyle =
 TextStyle(fontWeight: FontWeight.w200,fontFamily:'Amaranth', fontSize: 18,color: Colors.red);
 
-const ItemSearchStyle =
-TextStyle(fontFamily:'Amaranth', fontSize: 17,color: Colors.grey);
+const textStyle3 =
+TextStyle(fontFamily:'Amaranth', fontSize: 17,color: Colors.black);
 
 const textStyle1 =
 TextStyle(fontSize: 13,fontWeight: FontWeight.w600,fontFamily:'Amaranth',color:myappColor );

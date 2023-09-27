@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_classwork/const/AppConstants.dart';
 import 'package:flutter_classwork/ui/login_screen.dart';
 import 'package:flutter_classwork/ui/user_form.dart';
-
+import 'package:flutter_classwork/widgets/customButton.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -71,7 +71,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                     Text(
                       "Sign Up",
-                      style: TextStyle(fontSize: 22.sp, color: Colors.white),
+                      style: HeadingStyle,
                     ),
                   ],
                 ),
@@ -98,16 +98,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           height: 20.h,
                         ),
                         Text(
-                          "Welcome Buddy!",
-                          style: TextStyle(
-                              fontSize: 22.sp, color:myappColor),
+                          "Welcome Back!",
+                          style:ItemNameStyle,
                         ),
                         Text(
                           "Glad to see you back my buddy.",
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Color(0xFFBBBBBB),
-                          ),
+                          style: ItemDescStyle
                         ),
                         SizedBox(
                           height: 15.h,
@@ -133,18 +129,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             ),
                             Expanded(
                               child: TextField(
+                                style: ItemNameStyle,
                                 controller: _emailController,
                                 decoration: InputDecoration(
-                                  hintText: "email id",
-                                  hintStyle: TextStyle(
-                                    fontSize: 14.sp,
-                                    color: Color(0xFF414041),
-                                  ),
+                                  hintText: "enter a valid email id",
+                                  hintStyle: textHintStyle,
                                   labelText: 'EMAIL',
-                                  labelStyle: TextStyle(
-                                    fontSize: 15.sp,
-                                    color: myappColor,
-                                  ),
+                                  labelStyle: textStyle3,
                                 ),
                               ),
                             ),
@@ -176,17 +167,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               child: TextField(
                                 controller: _passwordController,
                                 obscureText: _obscureText,
+                                style: ItemNameStyle,
                                 decoration: InputDecoration(
                                   hintText: "password must be 6 character",
-                                  hintStyle: TextStyle(
-                                    fontSize: 14.sp,
-                                    color: Color(0xFF414041),
-                                  ),
+                                  hintStyle: textHintStyle,
                                   labelText: 'PASSWORD',
-                                  labelStyle: TextStyle(
-                                    fontSize: 15.sp,
-                                    color: myappColor,
-                                  ),
+                                  labelStyle:  textStyle3,
                                   suffixIcon: _obscureText == true
                                       ? IconButton(
                                       onPressed: () {
@@ -218,24 +204,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           height: 50.h,
                         ),
                         // elevated button
-                        SizedBox(
-                          width: 1.sw,
-                          height: 56.h,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              signUp();
-                            },
-                            child: Text(
-                              "Continue",
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 18.sp),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor:myappColor,
-                              elevation: 3,
-                            ),
-                          ),
-                        ),
+                    customButton("Sign Up", (){
+                      signUp()();
+                    },),
+
+
+
                         SizedBox(
                           height: 20.h,
                         ),
@@ -243,21 +217,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           children: [
                             Text(
                               "Don't have an account?",
-                              style: TextStyle(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xFFBBBBBB),
-                              ),
+                              style: textStyle2
                             ),
                             GestureDetector(
                               child: Text(
                                 " Sign In",
-                                style: TextStyle(
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color:myappColor,
-                                ),
-                              ),
+                                style: textStyle1,),
                               onTap: () {
                                 Navigator.push(
                                     context,

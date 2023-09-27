@@ -71,7 +71,7 @@ class _UserFormState extends State<UserForm> {
                 ),
                 Text(
                   "We will not share your information with anyone.",
-                  style: ItemSearchStyle
+                  style: textStyle3
                 ),
                 SizedBox(
                   height: 15.h,

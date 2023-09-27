@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_classwork/const/AppConstants.dart';
+import '../login_screen.dart';
 class Profile extends StatefulWidget {
   @override
   _ProfileState createState() => _ProfileState();
@@ -47,10 +48,8 @@ class _ProfileState extends State<Profile> {
              prefixIcon:Padding(padding: EdgeInsets.all(15), child: Text("Age: ",style: ItemNameStyle,))),
              controller: _ageController = TextEditingController(text: data['age']),
         ),
-        ElevatedButton(style: ElevatedButton.styleFrom(
-
-          elevation: 3,
-        ),onPressed: ()=>updateData(), child: Text("Update",style: myButtonStyle,))
+        ElevatedButton(
+            onPressed: ()=>updateData(), child: Text("Update",style: myButtonStyle,))
       ],
     );
   }
@@ -70,19 +69,35 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection("users-form-data").doc(FirebaseAuth.instance.currentUser!.email).snapshots(),
-          builder: (BuildContext context, AsyncSnapshot snapshot){
-            var data = snapshot.data;
-            if(data==null){
-              return Center(child: CircularProgressIndicator(),);
-            }
-            return setDataToTextField(data);
-          },
+      body: SafeArea(child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: StreamBuilder(
+              stream: FirebaseFirestore.instance.collection("users-form-data").doc(FirebaseAuth.instance.currentUser!.email).snapshots(),
+              builder: (BuildContext context, AsyncSnapshot snapshot){
+                var data = snapshot.data;
+                if(data==null){
+                  return Center(child: CircularProgressIndicator(),);
+                }
+                return setDataToTextField(data);
+              },
 
-        ),
+            ),
+          ),
+          ///add this
+
+
+          ElevatedButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut().then((value) {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => LoginScreen()));
+                });
+              },
+              child: Text("Sign_Out",style: myButtonStyle,)),
+
+        ],
       )),
     );
   }

@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Text(
                       "Sign In",
-                      style:  ItemNameStyle,
+                      style:  HeadingStyle,
                     ),
                   ],
                 ),
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           "Welcome Back",
                           style: ItemNameStyle,),
                         Text(
-                          "Glad to see you back my buddy.",
+                          "Glad to see you back .",
                           style: ItemDescStyle,
                         ),
                         SizedBox(
@@ -129,12 +129,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             Expanded(
                               child: TextField(
+                                style: ItemNameStyle,
                                 controller: _emailController,
                                 decoration: InputDecoration(
                                   hintText: "enter a valid email id",
                                   hintStyle: textHintStyle,
                                   labelText: 'EMAIL',
-                                  labelStyle: ItemSearchStyle,
+                                  labelStyle: textStyle3,
                                 ),
                               ),
                             ),
@@ -164,13 +165,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             Expanded(
                               child: TextField(
+                                style: ItemNameStyle,
                                 controller: _passwordController,
                                 obscureText: _obscureText,
                                 decoration: InputDecoration(
                                   hintText: "password must be 6 character",
                                   hintStyle: textHintStyle,
                                   labelText: 'PASSWORD',
-                                  labelStyle:  ItemSearchStyle,
+                                  labelStyle:  textStyle3,
                                   suffixIcon: _obscureText == true
                                       ? IconButton(
                                       onPressed: () {
@@ -241,7 +243,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                context,
                                CupertinoPageRoute(
                                    builder: (context) =>
-                                       AdminLoginScreen()));
+                                       adminPage()));
                          } ),
 
                       ],
