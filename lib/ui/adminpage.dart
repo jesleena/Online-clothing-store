@@ -23,10 +23,10 @@ class _adminPageState extends State<adminPage> {
 
 
 
-  sendUserDataToDB()async{
+  sendProductDataToDB()async{
 
     final FirebaseAuth _auth = FirebaseAuth.instance;
-    var  currentUser = _auth.currentUser;
+ //   var  currentUser = _auth.currentUser;
 
     CollectionReference _collectionRef = FirebaseFirestore.instance.collection("products");
     return _collectionRef.doc().set({
@@ -37,7 +37,6 @@ class _adminPageState extends State<adminPage> {
       "product-img[1]":_productimg2Controller.text,
     }).then((value) =>Fluttertoast.showToast(msg: "updated successfully"));
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +77,7 @@ class _adminPageState extends State<adminPage> {
                 ),
 
                 // elevated button
-                customButton("Submit",()=>sendUserDataToDB()),
+                customButton("Submit",()=>sendProductDataToDB()),
               ],
             ),
           ),

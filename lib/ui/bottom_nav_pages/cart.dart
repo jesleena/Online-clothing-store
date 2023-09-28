@@ -6,6 +6,7 @@ import 'package:flutter_classwork/widgets/fetchProducts.dart';
 import '../product_details_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_classwork/const/AppConstants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 num totalPriceFinal = 0;
 class Cart extends StatefulWidget {
   @override
@@ -93,8 +94,8 @@ class _CartState extends State<Cart> {
                       child: Column(
                         children: [
                           Container(
-                            height:300,
-                            width: 200,
+                            height:250.h,
+                            width: 200.h,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
                               image: DecorationImage(

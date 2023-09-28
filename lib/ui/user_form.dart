@@ -20,7 +20,7 @@ class _UserFormState extends State<UserForm> {
   TextEditingController _genderController = TextEditingController();
   TextEditingController _ageController = TextEditingController();
   List<String> gender = ["Male", "Female", "Other"];
-
+ late String? _img;
   Future<void> _selectDateFromPicker(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -41,7 +41,7 @@ class _UserFormState extends State<UserForm> {
 
     CollectionReference _collectionRef = FirebaseFirestore.instance.collection("users-form-data");
     return _collectionRef.doc(currentUser!.email).set({
-      "img":'https://cdn2.iconfinder.com/data/icons/hair-doodles-colored/1150/hair-face-girl-woman-head-beauty-purple-64.png',
+      "img":_img,
       "name":_nameController.text,
       "phone":_phoneController.text,
       "dob":_dobController.text,
@@ -102,6 +102,12 @@ class _UserFormState extends State<UserForm> {
                           onTap: () {
                             setState(() {
                               _genderController.text = value;
+                              if(value=='female')
+                                {
+                                   _img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjqFo1P8UX4uvsVG5whZcOCSmz-6f16ZAEAv0P-6LSuiO-TBPNgIrS4H2DXj2Ckf9CcSk&usqp=CAU';
+                                }
+                              else
+                                _img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ114IM7U7Je9w0_vRUTUWfbit01htsgYJyhH1gswzS40SkZRRSX3Q6L8KsXHDQ0v_UikI&usqp=CAU';
                             });
                           },
                         );
