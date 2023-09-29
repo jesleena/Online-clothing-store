@@ -205,7 +205,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         ),
                         // elevated button
                     customButton("Sign Up", (){
-                      signUp()();
+                      signUp();
                     },),
 
 
