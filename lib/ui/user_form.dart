@@ -102,13 +102,13 @@ class _UserFormState extends State<UserForm> {
                           onTap: () {
                             setState(() {
                               _genderController.text = value;
-                              if(value=='female')
-                                {
+                             // if(value=='female')
                                    _img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjqFo1P8UX4uvsVG5whZcOCSmz-6f16ZAEAv0P-6LSuiO-TBPNgIrS4H2DXj2Ckf9CcSk&usqp=CAU';
-                                }
-                              else
-                                _img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ114IM7U7Je9w0_vRUTUWfbit01htsgYJyhH1gswzS40SkZRRSX3Q6L8KsXHDQ0v_UikI&usqp=CAU';
-                            });
+
+                            // else if(value=='male')
+                            //  _img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ114IM7U7Je9w0_vRUTUWfbit01htsgYJyhH1gswzS40SkZRRSX3Q6L8KsXHDQ0v_UikI&usqp=CAU';
+
+                          });
                           },
                         );
                       }).toList(),

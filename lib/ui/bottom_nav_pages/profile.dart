@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_classwork/const/AppConstants.dart';
 import '../login_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Profile extends StatefulWidget {
   @override
   _ProfileState createState() => _ProfileState();
@@ -20,7 +21,7 @@ class _ProfileState extends State<Profile> {
       children: [
 
         CircleAvatar(backgroundImage: NetworkImage(data["img"]),radius: 50,),
-        SizedBox(height: 30,),
+        SizedBox(height: 5.h),
         TextFormField(style: ItemNameStyle,
           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
@@ -29,7 +30,7 @@ class _ProfileState extends State<Profile> {
              prefixIcon: Padding(padding: EdgeInsets.all(15), child:Text("Name: ",style: ItemNameStyle,))),
           controller: _nameController = TextEditingController(text: data['name'],),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 5.h,),
         TextFormField(style: ItemNameStyle,
           decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
@@ -38,7 +39,7 @@ class _ProfileState extends State<Profile> {
               prefixIcon:Padding(padding: EdgeInsets.all(15), child:Text("Phone: ",style: ItemNameStyle,))),
           controller: _phoneController = TextEditingController(text: data['phone']),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: 5.h,),
         TextFormField(
           style: ItemNameStyle,
            decoration: InputDecoration(
@@ -72,7 +73,7 @@ class _ProfileState extends State<Profile> {
       body: SafeArea(child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(10.0),
             child: StreamBuilder(
               stream: FirebaseFirestore.instance.collection("users-form-data").doc(FirebaseAuth.instance.currentUser!.email).snapshots(),
               builder: (BuildContext context, AsyncSnapshot snapshot){
@@ -95,7 +96,7 @@ class _ProfileState extends State<Profile> {
                       .push(MaterialPageRoute(builder: (context) => LoginScreen()));
                 });
               },
-              child: Text("Sign_Out",style: myButtonStyle,)),
+              child: Text("Sign Out",style: myButtonStyle,)),
 
         ],
       )),

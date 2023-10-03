@@ -121,7 +121,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
                 Text(widget._product['product-description'],style: ItemDescStyle,),
                 SizedBox(
-                  height: 10,
+                  height: 8.h,
                 ),
                 Text(
                   "\I\N\R ${widget._product['product-price'].toString()}",
@@ -130,7 +130,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 Divider(),
                 SizedBox(
                   width: 1.sw,
-                  height: 56.h,
+                  height: 50.h,
                   child: ElevatedButton(
                     onPressed: () => addToCart(),
                     child: Text(

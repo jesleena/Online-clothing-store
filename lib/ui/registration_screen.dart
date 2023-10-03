@@ -98,11 +98,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           height: 20.h,
                         ),
                         Text(
-                          "Welcome Back!",
+                          "Welcome ",
                           style:ItemNameStyle,
                         ),
                         Text(
-                          "Glad to see you back my buddy.",
+                          "Glad to see you.",
                           style: ItemDescStyle
                         ),
                         SizedBox(
