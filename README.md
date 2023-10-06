@@ -6,6 +6,4 @@ E-commerce Online Clothing store
 
 E-commerce Online Clothing store
 
-# Screen-shots
-![splash](https://github.com/jesleena/Online-clothing-store/assets/109158684/a8e45dc8-0e81-4f4c-9566-b397600cbe39)
 
