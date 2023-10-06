@@ -1,6 +1,6 @@
 # flutter_E-commerce Online Clothing store
 
-A new Flutter project.
+E-commerce Online Clothing store
 
 ## Getting Started
 
